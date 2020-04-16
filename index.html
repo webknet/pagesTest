@@ -5,11 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">    
   </head>
-  <body>
-   
+  <body>   
     <div>
       <h1> Page test </h1>
-    </div>
-    <script src="async-await.js"></script>
+      <h3></h3>
+      <input id="id" type="text" v-model="value"/>
+    </div>   
+    <script type="module" src="lixo.js"></script>
+    <!-- <script>
+        const t = document.getElementById('id')
+        const el = document.getElementsByTagName('h3')
+        el[0].innerText = 'test'
+        t.value = 'teste'
+        let proxy = new Proxy(t, {
+            get(target, prop) {
+                console.log(target[prop])
+
+                return target[prop]
+            }
+        })
+        t.addEventListener('input', onChange)
+
+        function onChange(e) {
+            el[0].innerText = proxy.value
+        }
+        
+        const els = document.getElementsByTagName('div')
+        console.log(els)
+        els[0].childNodes.forEach(element => {
+           
+            if (element.attributes) {
+                 console.log(element.attributes)
+                for( let i= 0; i < element.attributes.length; i++) {
+                    console.log(element.attributes.item(i))
+                }
+            }
+        });
+
+    </script> -->
   </body>
 </html>

@@ -71,7 +71,7 @@ const nestedHandler = {
            //return target[prop]
            return prop in target
             ? Reflect.get(target, prop )
-            : 'not exist'
+            : 'not exist...'
        }
    },
    set(target, prop, value, receiver) { console.log(receiver)
@@ -87,3 +87,27 @@ const nestedHandler = {
 
 let user1 = new Proxy(nestedObj, nestedHandler)
 
+//** Proxy prototype 
+
+let person = {
+    name: 'Sabino',
+    address: { city: 'Faro', filter: '' }
+}
+
+let proto_handler = {
+    get(target, prop) {
+        return prop in target ? target[prop]: 'not exist'
+    },
+    set(target, prop, value) {
+        console.log(target, prop, value)
+        return false
+        //Reflect.set(target, prop, value)
+    }
+}
+
+const p_roxy = new Proxy({}, proto_handler)
+
+Reflect.setPrototypeOf(person, p_roxy)
+
+
+console.log(person)

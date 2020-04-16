@@ -12,25 +12,28 @@ let vals = []
 
 //*** async await */
 
-async function getList() {
+const getList = async function() {
     const item1 = await getValue(10, 1)
     const item2 = await getValue(20, 2)
     const item3 = await getValue(20, 1)
 
     vals = [item1, item2, item3]
 
-    console.log(vals)
+    return vals
 }
+getList().then(result => console.log(result))
 
-async function getList1(init) {
+const getList1 = async init => {
     const item1 = await getValue(init, 1)
     const item2 = await getValue(item1, 2)
     const item3 = await getValue(item2, 1)
 
     vals = [item1, item2, item3]
 
-    console.log(vals)
+    return vals
 }
+
+getList1(23).then(result => console.log(result))
 
 
 //*** promises */
