@@ -30,7 +30,7 @@ const obj2 = {
 }
 
 /**
- * compare 2 objets with Map
+ * compare 2 objets 
  * propOut -> Array of properties to leave out
  */
 const compare = (obj1, obj2, propOut) => {
@@ -109,7 +109,8 @@ const updateObject =(roots, obj1, obj2) => {
                 _obj1 =_obj1[root[i]] = _obj2
             }       
         }
-    _obj1[root[root.length-1]] = _obj2[root[root.length-1]] 
+        let newValue = _obj2[root[root.length-1]]
+        _obj1[root[root.length-1]] =  Array.isArray(newValue) ?[ ...newValue] : newValue
     })    
 }
 
