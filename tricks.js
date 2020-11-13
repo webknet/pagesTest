@@ -166,3 +166,50 @@ function gameSettingsWithNullish(options) {
     
     console.log(checkCharge(20)) // => 'Ready for use'
     console.log(checkCharge(0)) // => 'Needs to charge'
+
+    /**
+     *  The Number-type in JavaScript
+     */
+
+    typeof "ByeBye";    // string
+    typeof { b: 3};     // object
+    typeof true;        // boolean
+    typeof 11;          // number
+    typeof 1.234;       // number
+    typeof -36.9;       // number
+
+
+    /**
+     *  Convert values with parseFloat and parseInt
+     */
+
+    parsefloat('6.9');                  // 6.9
+    parsefloat('      6.9        ');    // 6.9
+    parsefloat('6.9 and less');         // 6.9
+    parseInt('6.9');                    // 6
+    parseInt('');                       // NaN
+    parseInt('???');                    // NaN
+
+    parseInt('5e5');              //5
+    parseInt('0xF0');             //15
+    parseInt('0b1111');           //0
+    parseInt('0010');             //0
+    parseFloat('5e5');          //5000
+    parseFloat('0xF0');         //0
+    parseFloat('0b1111');       //0
+    parseFloat('0010');         //0
+
+    /**
+     * Number: a third way to convert numbers in JavaScript
+     */
+
+    Number(13);                   //13
+    Number(0b11);                 //3
+    Number(null);                 //0
+    Number([9]);                  //9
+    Number({valueOf: () => 96});  //96 (!)
+
+    parseFloat([1,2,3]);          // 1
+    Number([1,2,3]);              // NaN
+    parseFloat(new Date());       // Nan
+    Number(new Date());           // 1603437234455
