@@ -21,7 +21,8 @@ if (isValid)
 //use this
 isValid && gotoLogin()
 
-
+let arr001 = [ 1, 4, 5, 8, 1, 3, 4]
+console.log([ ...new Set(arr001)]) // => [1, 4, 5, 8, 3]
 
 //Null coalescing operator
 /**
