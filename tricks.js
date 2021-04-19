@@ -116,8 +116,17 @@ console.log(moneyAmount(noAccount)) // => `You currently do not own an account i
 console.log(moneyAmount(futureMoney))//  => -1
 
 /**
- *  ??= Operator
+ *  ??= Nullish coalescing Operator
  */
+
+ const foo = null ?? 'Your name';
+ // -> "Your name"
+ 
+ const bar = 0 ?? 42;
+ // -> 0
+//  The ?? operator is a logical operator that returns its right-hand side
+//  operand when its left-hand side operand is null or undefined, and 
+//  otherwise returns its left-hand side operand.
 
 function gameSettingsWithNullish(options) {
     options.gameSpeed ??= 1
@@ -134,8 +143,29 @@ function gameSettingsWithNullish(options) {
   gameSettingsWithDefaultParams(null, null) // => { gameSpeed: null, gameDiff: null }
 
   /**
-   * ?. Operator
+   * ?. Optional Chaining Operator 
    */
+
+   const adventurer = {
+    name: 'John',
+    cat: {
+      name: 'Taco'
+    }
+  };
+  
+  const dogName = adventurer.dog?.name;
+  // -> undefined
+  
+  const catName = adventurer.cat?.name;
+  // -> Taco
+  
+  adventurer.someNonExistentMethod?.()
+  // -> undefined
+
+//   The optional chaining operator, ?. , will continue the chain of 
+//   dot-notated objects or values if they are not undefined or null. 
+//   This can be useful if the data may contain empty values or different data structures.
+
 
   function addPlansWhenUndefined(plans, location, budget) {
     if(plans.tuesday?.location == undefined) {
