@@ -161,7 +161,8 @@ function gameSettingsWithNullish(options) {
   
   adventurer.someNonExistentMethod?.()
   // -> undefined
-
+  
+// *****
 //   The optional chaining operator, ?. , will continue the chain of 
 //   dot-notated objects or values if they are not undefined or null. 
 //   This can be useful if the data may contain empty values or different data structures.
